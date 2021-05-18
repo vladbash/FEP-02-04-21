@@ -1,3 +1,4 @@
+// Lecture 1
 var reasonOfTheUniverse = 42; // number 
 var name = 'Alex'; // string
 var isMarried = false; // boolean
