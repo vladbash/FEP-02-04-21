@@ -1,3 +1,4 @@
+// Lecture 2
 // Примитивы (ES5)
 
 var numberVar = 42;
