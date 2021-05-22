@@ -1,14 +1,15 @@
 // closures HW
 
 function calc(a) {
+    let result = a;
     return {
-        add: b => a += b,
-        sub: b => a -= b,
-        mult: b => a *= b,
-        div: b => a /= b,
-        getResult: () => a,
+        add: b => result += b,
+        sub: b => result -= b,
+        mult: b => result *= b,
+        div: b => result /= b,
+        getResult: () => result,
         printResult: () => {
-            console.log(a);
+            console.log(result);
         }
     };
 }

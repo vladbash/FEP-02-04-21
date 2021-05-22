@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework 9 | TODO List</title>
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./script.js" defer></script>
+</head>
+
+<body>
+    <main class="container">
+        <div class="nes-container actions-form-container block">
+            <div class="nes-field">
+                <label for="item-content-input">Task title</label>
+                <input type="text" id="item-content-input" class="nes-input">
+            </div>
+            <button type="button" id="add-item-btn" class="nes-btn is-primary actions-form-btn">Add task</button>
+        </div>
+        <div class="nes-container with-title is-centered block">
+            <p class="title">TODO Items</p>
+            <ul class="nes-list is-disc" id="todo-list"></ul>
+        </div>
+    </main>
+</body>
+
+</html>
