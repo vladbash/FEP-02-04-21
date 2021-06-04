@@ -26,6 +26,15 @@
             <ul class="nes-list is-disc" id="todo-list"></ul>
         </div>
     </main>
+
+    <script id="item-template" type="text/template">
+        <div>
+            <span>{{label}}</span>
+            <span>{{date}}</span>
+            <button data-action="delete">delete</button>
+            <button data-action="copy">copy</button>
+        </div>
+    </script>
 </body>
 
 </html>

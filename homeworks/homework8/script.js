@@ -23,3 +23,5 @@ calcObj.mult(2); // 11 * 2 = 22
 calcObj.div(11); // 22 / 11 = 2
 
 calcObj.printResult(); // -> 2
+
+
