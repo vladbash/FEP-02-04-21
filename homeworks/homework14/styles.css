@@ -1,0 +1,13 @@
+.accordion-item {}
+
+.accordion-item > .title {}
+
+.accordion-item > .content {
+    display: none;
+}
+
+.accordion-item.extended {}
+
+.accordion-item.extended > .content {
+    display: block;
+}

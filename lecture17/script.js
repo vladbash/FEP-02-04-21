@@ -5,7 +5,7 @@ class Animal {
     name
     age
     woolColor
-    hasWool
+    hasWool = false
     isDomestic = false
 
     sound() {
