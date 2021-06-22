@@ -77,9 +77,9 @@ class Cat extends Animal {
     }
 }
 
-const tom = new Cat('Tom');
+const catty = new Cat('Tom');
 
-console.log(tom);
+console.log(catty);
 
 
 // function DomCat(name) {
