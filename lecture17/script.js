@@ -77,17 +77,6 @@ class Cat extends Animal {
     }
 }
 
-
-// function Cat(name) {
-//     this.name = name;
-
-//     this.sound = function () {
-//         console.log('Meow!');
-//     }
-// }
-
-// Cat.prototype = new Animal();
-
 const tom = new Cat('Tom');
 
 console.log(tom);
