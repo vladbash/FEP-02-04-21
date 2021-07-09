@@ -1,0 +1,5 @@
+*.json
+
+vscode/settings.json
+
+!lecture1/data.json
