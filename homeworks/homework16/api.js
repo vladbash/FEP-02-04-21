@@ -1,4 +1,4 @@
-(function () {
+const apiModule = (function () {
     const API_URL = 'https://reqres.in/api';
 
     const checkUserCredentials = (login, password) => {
@@ -8,7 +8,7 @@
         };
 
         return fetch(`${API_URL}/login`, {
-            body: requestBody,
+            body: JSON.stringify(requestBody),
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -19,5 +19,10 @@
     const getUserList = (page = 1) => {
         return fetch(`${API_URL}/users?page=${page}`)
             .then(e => e.json());
+    };
+
+    return {
+        checkUserCredentials: checkUserCredentials,
+        getUserList: getUserList
     };
 })();
