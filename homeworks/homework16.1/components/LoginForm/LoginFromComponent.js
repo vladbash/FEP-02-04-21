@@ -1,17 +1,21 @@
+import { checkUserCredentials } from '../../api.js';
+
 export class LoginFormComponent {
-    constructor(template, entryId) {
+    constructor(template, entryId, onSuccess) {
         const el = document.createElement('div');
         el.insertAdjacentHTML('afterbegin', template);
         this.templateEl = el;
         this.entryEl = document.getElementById(entryId);
+        this.onSuccess = onSuccess;
 
-        this.templateEl.querySelector('#login-input')
-            .addEventListener('input', this.validate);
-        this.templateEl.querySelector('#password-input')
-            .addEventListener('input', this.validate);
+        this.loginInputEl = this.templateEl.querySelector('#login-input');
+        this.passwordInputEl = this.templateEl.querySelector('#password-input');
+
+        this.loginInputEl.addEventListener('input', this.validate);
+        this.passwordInputEl.addEventListener('input', this.validate);
 
         this.templateEl.querySelector('#sign-in-btn')
-            .addEventListener('click', this.onSignInClick);
+            .addEventListener('click', this.onSignInClick.bind(this));
     }
 
     validate(evtObject) {
@@ -24,11 +28,23 @@ export class LoginFormComponent {
     }
 
     onSignInClick() {
-        alert('sign in clicked');
+        const login = this.loginInputEl.value;
+        const password = this.passwordInputEl.value;
+        this.templateEl.querySelector('#error-message').classList.add('hidden');
+        
+        checkUserCredentials(login, password).then(e => {
+            this.onSuccess(e);
+        }).catch((e) => {
+            console.log(e);
+            this.templateEl.querySelector('#error-message').classList.remove('hidden');
+        });
     }
 
     render() {
-        Array.prototype.forEach.call(this.entryEl.children, e => e.remove());
         this.entryEl.insertAdjacentElement('afterbegin', this.templateEl);
+    }
+
+    dispose() {
+        this.templateEl.remove();
     }
 }

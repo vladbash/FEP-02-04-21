@@ -20,7 +20,13 @@ export const checkUserCredentials = (login, password) => {
         headers: {
             'content-type': 'application/json'
         }
-    }).then(e => e.json());
+    }).then(e => {
+        if (e.status >= 400) {
+            throw e;
+        }
+        return e;
+    })
+    .then(e => e.json());
 };
 
 export const getUserList = (page = 1) => {

@@ -3,8 +3,23 @@ import { UserListComponent } from './components/UserList/UserListComponent.js';
 
 const isUserLoggedIn = false;
 
+const loginComponent = new LoginFormComponent(
+    document.getElementById('login-form-tpl').innerHTML,
+    'main-entry',
+    onSuccessLogin
+);
+const userListComponent = new UserListComponent(
+    document.getElementById('user-list-item-tpl').innerHTML,
+    'main-entry'
+);
+
+function onSuccessLogin(e) {
+    loginComponent.dispose();
+    userListComponent.render();
+}
+
 if (isUserLoggedIn) {
-    new UserListComponent().render();
+    userListComponent.render();
 } else {
-    new LoginFormComponent(document.getElementById('login-form-tpl').innerHTML, 'main-entry').render();
+    loginComponent.render();
 }
