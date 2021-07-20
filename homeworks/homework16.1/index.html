@@ -9,8 +9,10 @@
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
     <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="./styles.css">
+    <script src="./core/utils/render.js" type="module"></script>
     <script src="./components/LoginForm/LoginFromComponent.js" type="module"></script>
     <script src="./components/UserList/UserListComponent.js" type="module"></script>
+    <script src="./core/Component.js" type="module"></script>
     <script src="./script.js" type="module" defer></script>
     <script src="./api.js" type="module"></script>
 </head>
@@ -38,10 +40,13 @@
         </div>
     </script>
     <script type="text/template" id="user-list-item-tpl">
-        <div>
-            <img src="{{avatar}}"/>
-            <span>{{first_name}} {{last_name}}</span>
-        </div>
+        <ul id="list" class="nes-list">
+            <li data-id="{{id}}">
+                <img src="{{avatar}}"/>
+                <span>{{first_name}} {{last_name}}</span>
+            </li>
+        </ul>
+        <button id="logout-btn">Log out</button>
     </script>
 </body>
 

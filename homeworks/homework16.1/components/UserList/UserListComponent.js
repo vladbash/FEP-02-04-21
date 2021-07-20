@@ -1,12 +1,20 @@
-export class UserListComponent {
-    constructor(template, entryId) {
-        const el = document.createElement('div');
-        el.insertAdjacentHTML('afterbegin', template);
-        this.templateEl = el;
-        this.entryEl = document.getElementById(entryId);
+import Component from "../../core/Component.js";
+import renderTemplate from "../../core/utils/render.js";
+
+export class UserListComponent extends Component {
+    constructor(template, entryId, onLogOut) {
+        super(template, entryId);
+
+        this.getElementById('logout-btn').addEventListener('click', onLogOut);
     }
 
-    render() {
-        this.entryEl.insertAdjacentElement('afterbegin', this.templateEl);
+    setState(users = []) {
+        const listEl = this.getElementById('list');
+        const liTmp = listEl.firstElementChild.outerHTML;
+
+        listEl.innerHTML = users.reduce((tpl, e) => {
+            return tpl + renderTemplate(liTmp, e);
+        }, '');
     }
+
 }
