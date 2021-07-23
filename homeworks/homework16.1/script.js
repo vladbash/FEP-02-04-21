@@ -30,21 +30,7 @@ function onLogOut() {
 
 function loadUsers() {
     getUserList().then(({ data }) => {
-        userListComponent.setState(data);
-        userListComponent.render();
-    }).then(() => {
-        setTimeout(() => {
-            userListComponent.setState([
-                {
-                    avatar: "https://reqres.in/img/faces/1-image.jpg",
-                    email: "george.bluth@reqres.in",
-                    first_name: "Test",
-                    id: 1,
-                    last_name: "Test",
-                }
-            ]);
-            userListComponent.render();
-        }, 3000);
+        userListComponent.setState({ list: data });
     });
 }
 

@@ -12,6 +12,7 @@
     <script src="./core/utils/render.js" type="module"></script>
     <script src="./components/LoginForm/LoginFromComponent.js" type="module"></script>
     <script src="./components/UserList/UserListComponent.js" type="module"></script>
+    <script src="./node_modules/moment/moment.js" type="module"></script>
     <script src="./core/Component.js" type="module"></script>
     <script src="./script.js" type="module" defer></script>
     <script src="./api.js" type="module"></script>
@@ -40,13 +41,37 @@
         </div>
     </script>
     <script type="text/template" id="user-list-item-tpl">
+        <section>
+            <button type="button" class="nes-btn is-primary" id="create-user-btn">
+              Create User
+            </button>
+            <dialog class="nes-dialog" id="user-form">
+              <form method="dialog" id="user-inner-form">
+                <div class="nes-field">
+                    <label for="name_field">User name</label>
+                    <input type="text" id="name_field" class="nes-input" value="{{first_name}} {{last_name}}">
+                </div>
+                  <div class="nes-field">
+                    <label for="job_field">User job</label>
+                    <input type="text" id="job_field" class="nes-input">
+                  </div>
+                <menu class="dialog-menu">
+                  <button class="nes-btn">Cancel</button>
+                  <button class="nes-btn is-primary" id="confirm">Confirm</button>
+                </menu>
+              </form>
+            </dialog>
+          </section>
+          <button id="logout-btn">Log out</button>
         <ul id="list" class="nes-list">
             <li data-id="{{id}}">
                 <img src="{{avatar}}"/>
                 <span>{{first_name}} {{last_name}}</span>
+                <button class="update">Update</button>
+                <button class="delete">Delete</button>
             </li>
         </ul>
-        <button id="logout-btn">Log out</button>
+        
     </script>
 </body>
 

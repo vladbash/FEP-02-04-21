@@ -36,3 +36,16 @@ export const getUserList = (page = 1) => {
     return fetch(`${API_URL}/users?page=${page}`)
         .then(e => e.json());
 };
+
+export const deleteUser = id => fetch(`${API_URL}/users/${id}`, {
+    method: 'DELETE'
+});
+
+export const createUser = (name, job) => {
+    console.log(name, job);
+};
+
+
+export const updateUser = (id, name, job) => {
+    console.log(id, name, job);
+};
