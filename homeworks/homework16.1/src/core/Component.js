@@ -1,4 +1,4 @@
-import moment from '../node_modules/moment/moment.js';
+import moment from 'moment';
 
 export default class Component {
     constructor(template, entryId) {

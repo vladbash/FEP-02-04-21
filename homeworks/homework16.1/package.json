@@ -1,14 +1,23 @@
 {
   "dependencies": {
-    "moment": "^2.29.1"
+    "moment": "2.28"
   },
   "name": "homework16.1",
   "version": "1.0.0",
   "description": "homework experiments",
   "main": "script.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.14.8",
+    "@babel/preset-env": "^7.14.8",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-uglify": "^3.0.2"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "gulp build:all",
+    "watch": "gulp watch:js"
   },
   "author": "",
   "license": "ISC"

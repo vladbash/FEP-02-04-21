@@ -1,0 +1,1 @@
+"use strict";var render=function(e,c){return Object.keys(c).reduce(function(e,r){return e.replaceAll("{{".concat(r,"}}"),c[r])},e)};
