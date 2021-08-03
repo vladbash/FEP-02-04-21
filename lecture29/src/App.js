@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import Logo from './Logo';
+import UserList from './UserList';
+
+import './styles/main.scss';
 
 // const App = () => {
 //     return <h1>
@@ -8,8 +12,31 @@ import React, { Component } from 'react';
 // };
 
 class App extends Component {
+    constructor() {
+        super();
+        this.state = {
+            name: 'Alex',
+            fullLogo: true,
+        };
+
+        this.onBtnClick = () => {
+            console.log('btn was clicked');
+            this.setState({
+                fullLogo: !this.state.fullLogo
+            });
+            // DON'T DO THAT
+            // this.state.fullLogo = false;
+            // this.forceUpdate();
+        };
+    }
+
     render() {
-        return <h1>Hello from Class Component!</h1>;
+        const { fullLogo, name } = this.state;
+        return <div>
+            <h1>Hello from Class Component! {name}</h1>
+            <Logo name="app-logo" amount={1} full={fullLogo} onLogoStateChange={this.onBtnClick}/>
+            {fullLogo ? <UserList /> : null}
+        </div>;
     }
 }
 

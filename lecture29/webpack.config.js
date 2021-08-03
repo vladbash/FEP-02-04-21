@@ -10,6 +10,14 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.(png|jpe?g|gif)$/i,
+                use: [
+                    {
+                        loader: 'file-loader',
+                    },
+                ],
+            },
+            {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 loader: 'babel-loader'
@@ -28,5 +36,12 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js',
+    },
+    devServer: {
+        contentBase: [
+            __dirname,
+            path.join(__dirname, 'dist')
+        ],
+        port: 9000,
     },
 };
