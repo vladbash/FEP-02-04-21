@@ -1,0 +1,115 @@
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9;
+    border-bottom: 4px solid #D3D3D3;
+    background-color: white;
+}
+
+header>.container {
+    display: flex;
+    align-items: center;
+    max-width: 980px;
+    margin: 0 auto;
+    padding-top: .8rem;
+    padding-bottom: .8rem;
+    transition: all .2s ease;
+}
+
+header>.container>.nav-brand {
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+}
+
+header>.container>.nav-brand>p {
+    margin: 0 .5rem;
+}
+
+main.container {
+    display: flex;
+    max-width: 1180px;
+    margin: 0 auto;
+    margin-top: 120px;
+}
+
+main>aside.menu {
+    position: fixed;
+    width: 320px;
+}
+
+.menu-tweet-action {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+}
+
+.menu-tweet-action>.tweet-btn {
+    width: 90%;
+}
+
+main>.feed {
+    margin-left: 330px;
+}
+
+.tweet {
+    margin-bottom: 1.5rem !important;
+    display: flex;
+}
+
+.tweet > .avatar {
+    margin-right: 1.2rem;
+}
+
+.tweet-title {
+    display: flex;
+    align-items: center;
+}
+
+.tweet-date {
+    margin-left: .5rem;
+    color: #D3D3D3;
+}
+
+.tweet-name {
+    margin-right: .5rem;
+}
+
+.tweet-nickname {
+    color: #D3D3D3;
+}
+
+.tweet-actions-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.tweet-action {
+    display: flex;
+    align-items: center;
+}
+
+.tweet-action > .counter {
+    margin-left: 8px;
+    font-size: 12px;
+}
+
+.tweet-action > .action-icon {
+    height: 32px;
+    width: 32px;
+}
+
+.tweet-content {
+    
+}
+
+.tweet-form {
+    margin-bottom: 2rem !important;
+}
+
+.tweet-form-actions {
+    display: flex;
+    justify-content: flex-end;
+}

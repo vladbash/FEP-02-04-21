@@ -33,8 +33,8 @@ class App extends Component {
     render() {
         const { fullLogo, name } = this.state;
         return <div>
-            <h1>Hello from Class Component! {name}</h1>
-            <Logo name="app-logo" amount={1} full={fullLogo} onLogoStateChange={this.onBtnClick}/>
+            <h1>Hello from Class, {name}!</h1>
+            <Logo name="app-logo" amount={1} full={fullLogo} onLogoStateChange={this.onBtnClick} />
             {fullLogo ? <UserList /> : null}
         </div>;
     }
