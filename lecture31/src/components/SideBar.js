@@ -1,15 +1,18 @@
 import React from 'react';
+import {
+    Link
+} from 'react-router-dom';
 
-const SideBar = props => (<aside className="menu">
+const SideBar = ({ onLogout }) => (<aside className="menu">
     <div className="nes-container is-rounded">
         <h3>
-            <a href=""># Home</a>
+            <Link to='/'># Home</Link>
         </h3>
         <h3>
-            <a href=""># Profile</a>
+            <Link to='/profile'># Profile</Link>
         </h3>
         <h3>
-            <a href=""># Log out</a>
+            <a href="" onClick={onLogout}># Log out</a>
         </h3>
         <section className="menu-tweet-action">
             <button type="button" className="nes-btn is-primary tweet-btn">

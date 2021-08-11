@@ -15,7 +15,7 @@ class TweetForm extends Component {
     };
 
     onTweetSubmit = () => {
-        const token = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMGQ3NzQ0NDQ2Yzk2MDAxMjkzYTg3YiIsImlhdCI6MTYyODI3MjU3OCwiZXhwIjoxNjI4NDQ1Mzc4fQ.oYF_5LSs5C9M0e4EsHeOifOAkw_wf3T0_8dWx1d7JIE`;
+        const token = localStorage.getItem('token');
         const { content } = this.state;
         fetch('http://143.198.136.212/api/tweets', {
             method: 'POST',
@@ -28,6 +28,13 @@ class TweetForm extends Component {
             }
         })
             .then(e => e.json())
+            .then(e => {
+                console.log(e);
+                this.setState({
+                    content: ''
+                });
+                this.props.onCreate(e);
+            })
             .catch(e => {
                 console.error(e);
             });

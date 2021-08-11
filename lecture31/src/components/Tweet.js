@@ -13,7 +13,7 @@ const Tweet = ({ content, likes = 0, onLikeClick, id }) => (<div className="twee
                 <h5 className="tweet-nickname">@elonmusk</h5>
                 <h6 className="tweet-date nes-text">1h ago</h6>
             </div>
-            <p className="tweet-content">{id} {content}</p>
+            <p className="tweet-content">{content}</p>
         </div>
         <div className="tweet-actions-container">
             <div className="tweet-action" onClick={() => onLikeClick(id)}>
